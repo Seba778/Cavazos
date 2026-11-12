@@ -103,8 +103,28 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .bar-links a:hover { color: var(--accent); }
 .bar-cta { min-height: 44px; }
 
-/* ---------- Hero ---------- */
+/* ---------- Inicio: video ---------- */
+.intro { position: relative; height: calc(100svh - var(--bar)); min-height: 560px; overflow: hidden; background: var(--black); }
+.intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.intro::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .45) 38%, rgba(0, 0, 0, 0) 68%);
+}
+.intro-text { position: absolute; z-index: 2; left: var(--m); right: var(--m); bottom: clamp(36px, 7vh, 80px); }
+.intro-title { font-size: var(--s-xl); line-height: .86; white-space: nowrap; }
+.intro-lede { margin-top: 28px; font-size: var(--s-md); line-height: 1.3; max-width: 34ch; font-weight: 500; }
+.intro-actions { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.intro-toggle {
+  position: absolute; z-index: 2; right: var(--m); bottom: clamp(36px, 7vh, 80px);
+  min-height: 44px; padding: 0 18px; background: var(--black); color: var(--ink);
+  font-size: var(--s-xs); font-weight: 700; transition: color .18s, transform .18s var(--ease);
+}
+.intro-toggle:hover { color: var(--accent); }
+.intro-toggle:active { transform: translateY(1px); }
+
+/* ---------- Platillos ---------- */
 .hero {
+  margin-top: var(--gap);
   position: relative;
   display: grid;
   grid-template-columns: 42% 58%;
@@ -114,9 +134,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   padding: clamp(28px, 5vh, 64px) var(--m) 48px;
   display: flex; flex-direction: column;
 }
-.hero-title { font-size: var(--s-xl); line-height: .86; white-space: nowrap; }
-.hero-lede { margin-top: 32px; font-size: var(--s-md); line-height: 1.3; max-width: 30ch; font-weight: 500; }
-.hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.hero-title { font-size: var(--s-lg); max-width: 10ch; }
 
 .picker { margin-top: auto; padding-top: 48px; display: grid; grid-template-columns: auto 1fr; gap: 0 40px; align-items: start; }
 .picker-tabs { display: grid; gap: 6px; justify-items: start; }
@@ -347,6 +365,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 1100px) {
   .hero { grid-template-columns: 1fr; }
   .hero-text { padding-bottom: 32px; }
+  .hero-title { max-width: none; }
   .picker { padding-top: 88px; }
   .hero-object { height: 72svh; }
   .about-panel { display: flex; flex-direction: column; min-height: 0; }
@@ -370,7 +389,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .bar-logo img { height: 30px; }
   .bar-cta { margin-left: auto; min-height: 40px; padding: 0 16px; }
   .picker { padding-top: 56px; gap: 0 24px; }
-  .hero-actions .link { display: none; }
+  .intro-actions .link { display: none; }
+  .intro-toggle { top: 16px; bottom: auto; }
   .hero-object { height: auto; aspect-ratio: 4 / 5; }
   .hero-card { position: absolute; width: 100%; }
   .about { padding: var(--gap) 10px 0; }

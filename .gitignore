@@ -3,3 +3,6 @@
 *.tmp.css
 Thumbs.db
 .DS_Store
+
+.vercel
+assets/img/video-cobazos.mp4

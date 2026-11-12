@@ -40,48 +40,21 @@
 
 <main>
 
-<!-- HERO: la sartén sobre su tabla, enorme -->
-<section class="hero" id="inicio">
-  <div class="hero-text">
-    <h1 class="hero-title" data-reveal>Los Cavazos</h1>
-    <p class="hero-lede" data-reveal>Mariscos estilo Mazatlán, carnes al carbón y cabrito de Monterrey asado en leña de mezquite. Aquí en Dallas.</p>
-    <div class="hero-actions" data-reveal>
+<!-- INICIO: video de la cocina -->
+<section class="intro" id="inicio" aria-labelledby="intro-h">
+  <video class="intro-video" autoplay muted loop playsinline preload="auto" poster="assets/video/cavazos-poster.jpg" aria-label="Video de la cocina de Los Cavazos: carnes al carbón, cebollitas y cabrito en la parrilla">
+    <source src="assets/video/cavazos-720.mp4" type="video/mp4" media="(max-width: 900px)">
+    <source src="assets/video/cavazos-1080.mp4" type="video/mp4">
+  </video>
+  <div class="intro-text">
+    <h1 id="intro-h" class="intro-title" data-reveal>Los Cavazos</h1>
+    <p class="intro-lede" data-reveal>Mariscos estilo Mazatlán, carnes al carbón y cabrito de Monterrey asado en leña de mezquite. Aquí en Dallas.</p>
+    <div class="intro-actions" data-reveal>
       <a class="btn btn-accent" href="#menu">Ver el menú</a>
       <a class="link" href="https://maps.app.goo.gl/NTE251S19HnPEeCE7" target="_blank" rel="noopener">10240 N Walton Walker Blvd</a>
     </div>
-
-    <div class="picker" data-reveal>
-      <div class="picker-tabs" role="tablist" aria-label="Elige un mundo">
-        <button role="tab" class="picker-tab" aria-selected="true" data-group="mariscos">Mariscos</button>
-        <button role="tab" class="picker-tab" aria-selected="false" data-group="carnes">Carnes</button>
-        <button role="tab" class="picker-tab" aria-selected="false" data-group="cabritos">Cabritos</button>
-      </div>
-      <ul class="picker-list" aria-label="Platillos">
-        <li data-group="mariscos"><button class="dish" aria-pressed="true" data-img="plato-01" data-price="$29" data-tone="red" data-fact="Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate y pepino en salsa negra de la casa.">Torre de mariscos</button></li>
-        <li data-group="mariscos"><button class="dish" aria-pressed="false" data-img="plato-14" data-price="$23" data-tone="red" data-fact="Tour de Mazatlán: selecciona 3 capos entre Chapo, Pantera Rosa, Amarillo Carrillo, Jesús Malverde y Negro Santilla.">Aguachile Tour de Mazatlán</button></li>
-        <li data-group="mariscos"><button class="dish" aria-pressed="false" data-img="plato-03" data-price="$15" data-tone="red" data-fact="La michelada de la casa, escarchada y bien cargada.">Micherey</button></li>
-        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-10" data-price="$38" data-tone="maroon" data-fact="Fajita de res y pollo, salchicha ahumada y camarón al carbón de mezquite. Para dos.">Parrillada para dos</button></li>
-        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-11" data-price="$38" data-tone="maroon" data-fact="Pollo, arrachera, camarón y salchicha, en molcajete hirviendo.">Molcajete para dos</button></li>
-        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-05" data-price="$22" data-tone="maroon" data-fact="Tuétano de res a la parrilla, con cebollita y chile toreado.">Tuétano de res</button></li>
-        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-04" data-price="$24" data-tone="maroon" data-fact="Arrachera con frijoles, arroz, lechuga, pico de gallo y guacamole.">Arrachera</button></li>
-        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-07" data-price="P. de mercado" data-tone="black" data-fact="Pierna de cabrito de Monterrey, asada 100% en leña de mezquite.">Pierna de cabrito</button></li>
-        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-08" data-price="P. de mercado" data-tone="black" data-fact="Paleta y riñonada, servidas chisporroteando sobre cama de cebolla.">Paleta y riñonada</button></li>
-        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-12" data-price="$19" data-tone="black" data-fact="La cabeza de cabrito, para los que saben.">Cabeza de cabrito</button></li>
-      </ul>
-    </div>
   </div>
-
-  <figure class="hero-object">
-    <div class="hero-frame" data-parallax="0.12">
-      <img class="hero-img is-on" src="assets/img/plato-01.jpg" alt="Torre de mariscos con aguacate y camarón sobre ceviche" width="1600" height="1200" fetchpriority="high">
-      <img class="hero-img" src="assets/img/plato-01.jpg" alt="" width="1600" height="1200" aria-hidden="true">
-    </div>
-    <figcaption class="hero-card" data-tone="red" aria-live="polite">
-      <span class="hero-card-name">Torre de mariscos</span>
-      <span class="hero-card-price">$29</span>
-      <span class="hero-card-fact">Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate y pepino en salsa negra de la casa.</span>
-    </figcaption>
-  </figure>
+  <button class="intro-toggle" type="button" aria-pressed="false">Pausar video</button>
 </section>
 
 <!-- CABRITO: panel profundo con retrato en forma de tabla -->
@@ -115,6 +88,45 @@
       <a class="btn btn-accent" href="#m-cabrito" data-reveal>Ver todo el cabrito</a>
     </div>
   </div>
+</section>
+
+<!-- PLATILLOS: la sartén sobre su tabla, enorme -->
+<section class="hero" id="platillos" aria-labelledby="platillos-h">
+  <div class="hero-text">
+    <h2 id="platillos-h" class="hero-title" data-reveal>Platillos de la casa</h2>
+
+    <div class="picker" data-reveal>
+      <div class="picker-tabs" role="tablist" aria-label="Elige un mundo">
+        <button role="tab" class="picker-tab" aria-selected="true" data-group="mariscos">Mariscos</button>
+        <button role="tab" class="picker-tab" aria-selected="false" data-group="carnes">Carnes</button>
+        <button role="tab" class="picker-tab" aria-selected="false" data-group="cabritos">Cabritos</button>
+      </div>
+      <ul class="picker-list" aria-label="Platillos">
+        <li data-group="mariscos"><button class="dish" aria-pressed="true" data-img="plato-01" data-price="$29" data-tone="red" data-fact="Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate y pepino en salsa negra de la casa.">Torre de mariscos</button></li>
+        <li data-group="mariscos"><button class="dish" aria-pressed="false" data-img="plato-14" data-price="$23" data-tone="red" data-fact="Tour de Mazatlán: selecciona 3 capos entre Chapo, Pantera Rosa, Amarillo Carrillo, Jesús Malverde y Negro Santilla.">Aguachile Tour de Mazatlán</button></li>
+        <li data-group="mariscos"><button class="dish" aria-pressed="false" data-img="plato-03" data-price="$15" data-tone="red" data-fact="La michelada de la casa, escarchada y bien cargada.">Micherey</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-10" data-price="$38" data-tone="maroon" data-fact="Fajita de res y pollo, salchicha ahumada y camarón al carbón de mezquite. Para dos.">Parrillada para dos</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-11" data-price="$38" data-tone="maroon" data-fact="Pollo, arrachera, camarón y salchicha, en molcajete hirviendo.">Molcajete para dos</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-05" data-price="$22" data-tone="maroon" data-fact="Tuétano de res a la parrilla, con cebollita y chile toreado.">Tuétano de res</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-04" data-price="$24" data-tone="maroon" data-fact="Arrachera con frijoles, arroz, lechuga, pico de gallo y guacamole.">Arrachera</button></li>
+        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-07" data-price="P. de mercado" data-tone="black" data-fact="Pierna de cabrito de Monterrey, asada 100% en leña de mezquite.">Pierna de cabrito</button></li>
+        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-08" data-price="P. de mercado" data-tone="black" data-fact="Paleta y riñonada, servidas chisporroteando sobre cama de cebolla.">Paleta y riñonada</button></li>
+        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-12" data-price="$19" data-tone="black" data-fact="La cabeza de cabrito, para los que saben.">Cabeza de cabrito</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <figure class="hero-object">
+    <div class="hero-frame" data-parallax="0.12">
+      <img class="hero-img is-on" src="assets/img/plato-01.jpg" alt="Torre de mariscos con aguacate y camarón sobre ceviche" width="1600" height="1200" fetchpriority="high">
+      <img class="hero-img" src="assets/img/plato-01.jpg" alt="" width="1600" height="1200" aria-hidden="true">
+    </div>
+    <figcaption class="hero-card" data-tone="red" aria-live="polite">
+      <span class="hero-card-name">Torre de mariscos</span>
+      <span class="hero-card-price">$29</span>
+      <span class="hero-card-fact">Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate y pepino en salsa negra de la casa.</span>
+    </figcaption>
+  </figure>
 </section>
 
 <!-- FRANJA: se desliza con el scroll -->

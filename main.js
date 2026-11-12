@@ -4,6 +4,30 @@
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const amp = calm ? 0.45 : 1;
 
+  /* ---------- Video de inicio ---------- */
+  const video = document.querySelector('.intro-video');
+  const toggle = document.querySelector('.intro-toggle');
+  if (video && toggle) {
+    let userPaused = false;
+    const play = () => { const r = video.play(); if (r && r.catch) r.catch(() => {}); };
+    const label = () => {
+      toggle.textContent = video.paused ? 'Reproducir video' : 'Pausar video';
+      toggle.setAttribute('aria-pressed', String(video.paused));
+    };
+    toggle.addEventListener('click', () => {
+      if (video.paused) { userPaused = false; play(); } else { userPaused = true; video.pause(); }
+    });
+    video.addEventListener('play', label);
+    video.addEventListener('pause', label);
+    // Se pausa fuera de pantalla para no gastar batería ni datos, y vuelve al regresar
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) { if (!userPaused) play(); } else video.pause();
+      }, { threshold: 0.15 }).observe(video);
+    }
+    play();
+  }
+
   /* ---------- Selector: Mariscos · Carnes · Cabritos ---------- */
   const tabs = [...document.querySelectorAll('.picker-tab')];
   const items = [...document.querySelectorAll('.picker-list li')];
