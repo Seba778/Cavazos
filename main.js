@@ -175,7 +175,7 @@
     if (!panels.some(p => p.id === id)) return;
     e.preventDefault();
     openChapter(id, true);
-    document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+    if (window.__lenis) window.__lenis.scrollTo('#menu', { offset: -72 }); else document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
   }));
 
   // Teléfono: categorías plegadas salvo la primera de cada capítulo
@@ -192,7 +192,6 @@
   {
     const bands = [...document.querySelectorAll('[data-band]')];
     const para = [...document.querySelectorAll('[data-parallax]')];
-    const row = document.querySelector('.gallery-row');
     let ticking = false;
     const vh = () => window.innerHeight;
     function frame() {
@@ -210,10 +209,6 @@
         const mid = (r.top + r.height / 2 - h / 2);
         el.style.setProperty('--parallax-translate', `${(-mid * amp * parseFloat(el.dataset.parallax)).toFixed(1)}px`);
       });
-      if (row) {
-        const r = row.getBoundingClientRect();
-        if (r.bottom > 0 && r.top < h) row.style.setProperty('--gallery-translate', `${((r.top + r.height / 2 - h / 2) * 0.25 * amp).toFixed(1)}px`);
-      }
     }
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
     window.addEventListener('scroll', onScroll, { passive: true });

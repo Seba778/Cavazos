@@ -45,7 +45,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--bar) + 64px); }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--bar) + 64px); }
 body {
   margin: 0;
   background: var(--ground);
@@ -82,8 +82,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   text-decoration: none;
   transition: transform .18s var(--ease), background-color .18s var(--ease);
 }
-.btn-accent { background: var(--accent); color: var(--on-accent); }
-.btn-accent:hover { background: #FFB733; transform: translateY(-2px); }
+.btn { position: relative; overflow: hidden; isolation: isolate; }
+.btn::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--black);
+  transform: translateY(101%); transition: transform .45s var(--ease);
+}
+.btn:hover::before { transform: none; }
+.btn-accent { background: var(--accent); color: var(--on-accent); transition: color .3s var(--ease), transform .18s var(--ease); }
+.btn-accent:hover { color: var(--accent); transform: translateY(-2px); }
 .btn-accent:active { transform: translateY(1px); }
 .btn-block { display: flex; width: 100%; }
 .link { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; font-weight: 500; transition: color .18s; }
@@ -299,29 +305,29 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 .band-alt { color: var(--accent); margin-left: -30vw; }
 
-/* ---------- Galería ---------- */
-.gallery { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: var(--gap) 0; }
+/* ---------- Galería: muro de comida ---------- */
+.gallery { padding: var(--gap) 0; overflow: hidden; }
 .gallery-title {
-  position: relative; z-index: 2;
-  padding: 0 var(--m); margin-bottom: -12px;
-  font-size: var(--s-lg);
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+  padding: 0 var(--m); margin-bottom: 40px;
+  font-size: var(--s-xl);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 24px;
 }
 .gallery-count { font-family: var(--f-text); font-weight: 500; text-transform: none; font-size: var(--s-sm); color: var(--accent); letter-spacing: 0; }
-.gallery-row {
-  display: flex; gap: 3vw; overflow-x: auto; scrollbar-width: none;
-  padding: 40px var(--m); scroll-snap-type: x proximity;
-}
-.gallery-row::-webkit-scrollbar { display: none; }
+.gallery-wall { display: grid; gap: 14px; outline-offset: -3px; overflow: hidden; }
+.gallery-row { display: flex; gap: 14px; width: max-content; padding: 0 var(--m); will-change: transform; }
+.gallery-row--b { margin-left: -18vw; }
 .gallery-row img {
-  transform: translate3d(var(--gallery-translate, 0px), 0, 0) scale(var(--gs, 1));
-  flex: none; width: 15vw; height: 34svh; object-fit: cover; scroll-snap-align: start;
-  transition: transform .25s var(--ease);
+  flex: none; height: clamp(180px, 30svh, 320px); width: auto; aspect-ratio: 4 / 3; object-fit: cover;
+  transition: transform .4s var(--ease), filter .4s var(--ease);
 }
-.gallery-row img:hover { --gs: 1.08; }
+.gallery-row img:hover { transform: scale(1.04); }
+/* con GSAP: la galería se ancla y ocupa justo una pantalla */
+.has-motion .gallery { height: calc(100svh - var(--bar)); padding: 0; display: flex; flex-direction: column; justify-content: center; margin-top: var(--gap); }
+/* sin GSAP: filas que se deslizan con el dedo */
+html:not(.has-motion) .gallery-wall { overflow-x: auto; scrollbar-width: none; }
 
 /* ---------- Visítanos ---------- */
-.visit { position: relative; min-height: 100svh; }
+.visit { position: relative; min-height: 100svh; overflow: hidden; }
 .visit-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; }
 .visit-card {
   position: absolute; top: 60px; right: var(--m);
@@ -413,10 +419,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .cat .cat-note { padding-bottom: 18px; margin-top: 0; }
   .showcase-frame { width: 66vw; }
   .showcase-caption { padding: 0 var(--m); }
-  .gallery { min-height: 80svh; }
-  .gallery-title { margin-bottom: 0; }
-  .gallery-row { gap: 5vw; padding-top: 20px; scroll-snap-type: x mandatory; }
-  .gallery-row img { width: 40vw; height: 60vw; }
+  .gallery-title { margin-bottom: 24px; }
+  .gallery-row img { height: 34vw; }
+  .gallery-wall, .gallery-row { gap: 8px; }
   .visit { min-height: 0; padding-bottom: 40px; }
   .visit-photo { position: relative; height: 70svh; }
   .visit-card { position: relative; top: auto; right: auto; width: auto; margin: -80px var(--m) 0; padding: 28px 24px 0; }
@@ -425,8 +430,54 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .foot-blocks { grid-template-columns: 1fr; }
 }
 
+/* ---------- Telón de entrada ---------- */
+.loader { position: fixed; inset: 0; z-index: 200; pointer-events: none; display: none; }
+.js:not(.no-loader) .loader { display: block; animation: loader-failsafe .01s 4.5s forwards; }
+@keyframes loader-failsafe { to { visibility: hidden; } }
+.loader-panel { position: absolute; inset: 0; }
+.loader-panel--back { background: var(--red); }
+.loader-panel--front { background: var(--maroon); display: grid; place-content: center; justify-items: center; gap: 28px; }
+.loader-logo { width: min(340px, 64vw); height: auto; }
+.loader-bar { display: block; width: min(340px, 64vw); height: 6px; background: rgba(0, 0, 0, .35); overflow: hidden; }
+.loader-bar span { display: block; height: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); }
+
+/* ---------- Brasas sobre el video ---------- */
+.intro-embers { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+.intro-video { transform-origin: 50% 60%; }
+
+/* ---------- Grano fílmico ---------- */
+body::after {
+  content: ""; position: fixed; inset: -50%; z-index: 150; pointer-events: none; opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Pestañas de la carta: indicador ---------- */
+.menu-tabs { position: relative; padding-bottom: 18px; }
+.menu-ink {
+  position: absolute; left: 0; bottom: 0; height: 6px; width: 0; background: var(--accent);
+  transition: transform .5s var(--ease), width .5s var(--ease);
+}
+
+/* ---------- Palabra del pie ---------- */
+.foot { grid-template-rows: 1fr auto; }
+.foot-word {
+  grid-column: 1 / -1; margin: 0; padding: 4vw var(--m) 0; overflow: hidden;
+  font-family: var(--f-display); font-weight: 900; text-transform: uppercase;
+  font-size: 24.5vw; line-height: .78; letter-spacing: -.01em; white-space: nowrap; color: var(--ink);
+  text-align: center;
+}
+
+/* ---------- Scroll suave ---------- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
 /* ---------- Movimiento reducido: se suaviza, no se apaga ---------- */
 @media (prefers-reduced-motion: reduce) {
   .js [data-reveal] { transform: translateY(10px); }
   .js [data-reveal].is-in { transform: none; }
 }
+
+/* El título del inicio espera a que la animación lo arme (y aparece solo si el script falla) */
+.js .intro-title { visibility: hidden; animation: title-failsafe .01s 3.5s forwards; }
+@keyframes title-failsafe { to { visibility: visible; } }

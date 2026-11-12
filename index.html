@@ -24,9 +24,20 @@
   "sameAs": ["https://www.instagram.com/cabritos_cavazos", "https://www.facebook.com/CabritosLosCavazos", "https://www.tiktok.com/@cabritos.cavazos"]
 }
 </script>
-<script>document.documentElement.classList.add('js')</script>
+<script>
+  (function(){var d=document.documentElement;d.classList.add('js');
+  try{ if(sessionStorage.getItem('cvz-seen')) d.classList.add('no-loader'); }catch(e){ d.classList.add('no-loader'); }})();
+</script>
 </head>
 <body>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader-panel loader-panel--back"></div>
+  <div class="loader-panel loader-panel--front">
+    <img class="loader-logo" src="assets/img/logo-blanco.png" alt="" width="1200" height="288">
+    <span class="loader-bar"><span></span></span>
+  </div>
+</div>
 
 <header class="bar">
   <a class="bar-logo" href="#inicio" aria-label="Los Cavazos, inicio"><img src="assets/img/logo-blanco.png" alt="Los Cavazos · Mariscos, Carnes, Cabritos" width="1200" height="288"></a>
@@ -46,6 +57,7 @@
     <source src="assets/video/cavazos-720.mp4" type="video/mp4" media="(max-width: 900px)">
     <source src="assets/video/cavazos-1080.mp4" type="video/mp4">
   </video>
+  <canvas class="intro-embers" aria-hidden="true"></canvas>
   <div class="intro-text">
     <h1 id="intro-h" class="intro-title" data-reveal>Los Cavazos</h1>
     <p class="intro-lede" data-reveal>Mariscos estilo Mazatlán, carnes al carbón y cabrito de Monterrey asado en leña de mezquite. Aquí en Dallas.</p>
@@ -425,27 +437,31 @@
 <!-- GALERÍA -->
 <section class="gallery" aria-labelledby="gal-h">
   <h2 id="gal-h" class="gallery-title"><span>La mesa completa</span> <span class="gallery-count">20 platillos</span></h2>
-  <div class="gallery-row" tabindex="0" aria-label="Galería de platillos, desliza para ver más">
-    <img src="assets/img/plato-01-sm.jpg" alt="Torre de mariscos" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-02-sm.jpg" alt="Chicharrón de ribeye en sartén" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-03-sm.jpg" alt="Micherey escarchada" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-04-sm.jpg" alt="Arrachera en sartén sobre tabla" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-05-sm.jpg" alt="Tuétano de res" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-06-sm.jpg" alt="Tablitas de res" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-07-sm.jpg" alt="Pierna de cabrito" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-08-sm.jpg" alt="Paleta y riñonada de cabrito" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-09-sm.jpg" alt="Cabrito al pastor" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-10-sm.jpg" alt="Parrillada con camarón y salchicha" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-11-sm.jpg" alt="Molcajete para dos" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-12-sm.jpg" alt="Cabeza de cabrito" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-13-sm.jpg" alt="Tacos gourmet con arroz y frijoles" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-14-sm.jpg" alt="Aguachile con mango y naranja" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-15-sm.jpg" alt="Pasta Sinaloa con camarón" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-16-sm.jpg" alt="Pasta verde con camarón y pan" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-17-sm.jpg" alt="Aguachile de ribeye en molcajete" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-18-sm.jpg" alt="Plato con arroz, frijoles y salsas de la casa" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-19-sm.jpg" alt="Piña colada con coco" width="800" height="600" loading="lazy">
-    <img src="assets/img/plato-20-sm.jpg" alt="Nachos de fajita" width="800" height="600" loading="lazy">
+  <div class="gallery-wall" tabindex="0" aria-label="Galería de platillos">
+    <div class="gallery-row gallery-row--a">
+      <img src="assets/img/plato-01-sm.jpg" alt="Torre de mariscos" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-02-sm.jpg" alt="Chicharrón de ribeye en sartén" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-03-sm.jpg" alt="Micherey escarchada" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-04-sm.jpg" alt="Arrachera en sartén sobre tabla" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-05-sm.jpg" alt="Tuétano de res" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-06-sm.jpg" alt="Tablitas de res" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-07-sm.jpg" alt="Pierna de cabrito" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-08-sm.jpg" alt="Paleta y riñonada de cabrito" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-09-sm.jpg" alt="Cabrito al pastor" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-10-sm.jpg" alt="Parrillada con camarón y salchicha" width="800" height="600" loading="lazy">
+    </div>
+    <div class="gallery-row gallery-row--b">
+      <img src="assets/img/plato-11-sm.jpg" alt="Molcajete para dos" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-12-sm.jpg" alt="Cabeza de cabrito" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-13-sm.jpg" alt="Tacos gourmet con arroz y frijoles" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-14-sm.jpg" alt="Aguachile con mango y naranja" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-15-sm.jpg" alt="Pasta Sinaloa con camarón" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-16-sm.jpg" alt="Pasta verde con camarón y pan" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-17-sm.jpg" alt="Aguachile de ribeye en molcajete" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-18-sm.jpg" alt="Plato con arroz, frijoles y salsas de la casa" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-19-sm.jpg" alt="Piña colada con coco" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-20-sm.jpg" alt="Nachos de fajita" width="800" height="600" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -485,8 +501,14 @@
     </div>
     <p class="foot-legal">© 2026 Cabritos Los Cavazos · Mariscos, carnes y cabritos · Dallas, Texas</p>
   </div>
+  <p class="foot-word" aria-hidden="true">Los Cavazos</p>
 </footer>
 
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/SplitText.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
 <script src="main.js" defer></script>
+<script src="motion.js" defer></script>
 </body>
 </html>
