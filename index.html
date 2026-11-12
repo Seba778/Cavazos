@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Cavazos · Mariscos, Carnes y Cabritos en Dallas</title>
+<meta name="description" content="Cabritos Los Cavazos: mariscos estilo Mazatlán, carnes al carbón y cabrito de Monterrey asado en leña de mezquite. 10240 N Walton Walker Blvd, Dallas, TX.">
+<meta property="og:title" content="Los Cavazos · Mariscos, Carnes y Cabritos">
+<meta property="og:description" content="Mariscos estilo Mazatlán, carnes al carbón y cabrito de Monterrey asado en leña de mezquite. Dallas, TX.">
+<meta property="og:image" content="assets/img/plato-10.jpg">
+<meta name="theme-color" content="#1D120D">
+<link rel="icon" href="assets/img/logo-rojo.png">
+<link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/field-gothic-xxcond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Cabritos Los Cavazos",
+  "servesCuisine": ["Mexicana", "Mariscos estilo Mazatlán", "Cabrito"],
+  "address": {"@type": "PostalAddress", "streetAddress": "10240 N Walton Walker Blvd", "addressLocality": "Dallas", "addressRegion": "TX", "postalCode": "75220", "addressCountry": "US"},
+  "hasMap": "https://maps.app.goo.gl/NTE251S19HnPEeCE7",
+  "sameAs": ["https://www.instagram.com/cabritos_cavazos", "https://www.facebook.com/CabritosLosCavazos", "https://www.tiktok.com/@cabritos.cavazos"]
+}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="bar">
+  <a class="bar-logo" href="#inicio" aria-label="Los Cavazos, inicio"><img src="assets/img/logo-blanco.png" alt="Los Cavazos · Mariscos, Carnes, Cabritos" width="1200" height="288"></a>
+  <nav class="bar-links" aria-label="Principal">
+    <a href="#menu">Menú</a>
+    <a href="#cabrito">Cabrito</a>
+    <a href="#visitanos">Visítanos</a>
+  </nav>
+  <a class="btn btn-accent bar-cta" href="https://maps.app.goo.gl/NTE251S19HnPEeCE7" target="_blank" rel="noopener">Cómo llegar</a>
+</header>
+
+<main>
+
+<!-- HERO: la sartén sobre su tabla, enorme -->
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <h1 class="hero-title" data-reveal>Los Cavazos</h1>
+    <p class="hero-lede" data-reveal>Mariscos estilo Mazatlán, carnes al carbón y cabrito de Monterrey asado en leña de mezquite. Aquí en Dallas.</p>
+    <div class="hero-actions" data-reveal>
+      <a class="btn btn-accent" href="#menu">Ver el menú</a>
+      <a class="link" href="https://maps.app.goo.gl/NTE251S19HnPEeCE7" target="_blank" rel="noopener">10240 N Walton Walker Blvd</a>
+    </div>
+
+    <div class="picker" data-reveal>
+      <div class="picker-tabs" role="tablist" aria-label="Elige un mundo">
+        <button role="tab" class="picker-tab" aria-selected="true" data-group="mariscos">Mariscos</button>
+        <button role="tab" class="picker-tab" aria-selected="false" data-group="carnes">Carnes</button>
+        <button role="tab" class="picker-tab" aria-selected="false" data-group="cabritos">Cabritos</button>
+      </div>
+      <ul class="picker-list" aria-label="Platillos">
+        <li data-group="mariscos"><button class="dish" aria-pressed="true" data-img="plato-01" data-price="$29" data-tone="red" data-fact="Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate y pepino en salsa negra de la casa.">Torre de mariscos</button></li>
+        <li data-group="mariscos"><button class="dish" aria-pressed="false" data-img="plato-14" data-price="$23" data-tone="red" data-fact="Tour de Mazatlán: selecciona 3 capos entre Chapo, Pantera Rosa, Amarillo Carrillo, Jesús Malverde y Negro Santilla.">Aguachile Tour de Mazatlán</button></li>
+        <li data-group="mariscos"><button class="dish" aria-pressed="false" data-img="plato-03" data-price="$15" data-tone="red" data-fact="La michelada de la casa, escarchada y bien cargada.">Micherey</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-10" data-price="$38" data-tone="maroon" data-fact="Fajita de res y pollo, salchicha ahumada y camarón al carbón de mezquite. Para dos.">Parrillada para dos</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-11" data-price="$38" data-tone="maroon" data-fact="Pollo, arrachera, camarón y salchicha, en molcajete hirviendo.">Molcajete para dos</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-05" data-price="$22" data-tone="maroon" data-fact="Tuétano de res a la parrilla, con cebollita y chile toreado.">Tuétano de res</button></li>
+        <li data-group="carnes"><button class="dish" aria-pressed="false" data-img="plato-04" data-price="$24" data-tone="maroon" data-fact="Arrachera con frijoles, arroz, lechuga, pico de gallo y guacamole.">Arrachera</button></li>
+        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-07" data-price="P. de mercado" data-tone="black" data-fact="Pierna de cabrito de Monterrey, asada 100% en leña de mezquite.">Pierna de cabrito</button></li>
+        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-08" data-price="P. de mercado" data-tone="black" data-fact="Paleta y riñonada, servidas chisporroteando sobre cama de cebolla.">Paleta y riñonada</button></li>
+        <li data-group="cabritos"><button class="dish" aria-pressed="false" data-img="plato-12" data-price="$19" data-tone="black" data-fact="La cabeza de cabrito, para los que saben.">Cabeza de cabrito</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <figure class="hero-object">
+    <div class="hero-frame" data-parallax="0.12">
+      <img class="hero-img is-on" src="assets/img/plato-01.jpg" alt="Torre de mariscos con aguacate y camarón sobre ceviche" width="1600" height="1200" fetchpriority="high">
+      <img class="hero-img" src="assets/img/plato-01.jpg" alt="" width="1600" height="1200" aria-hidden="true">
+    </div>
+    <figcaption class="hero-card" data-tone="red" aria-live="polite">
+      <span class="hero-card-name">Torre de mariscos</span>
+      <span class="hero-card-price">$29</span>
+      <span class="hero-card-fact">Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate y pepino en salsa negra de la casa.</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- CABRITO: panel profundo con retrato en forma de tabla -->
+<section class="about" id="cabrito" aria-labelledby="cabrito-h">
+  <div class="about-panel">
+    <div class="about-left">
+      <h2 id="cabrito-h" class="about-title" data-reveal>Cabrito de Monterrey</h2>
+      <p class="about-stamp" data-reveal>100% cabrito regio</p>
+      <div class="about-photo" data-reveal data-parallax="-0.08">
+        <img src="assets/img/plato-09.jpg" alt="Cabrito al pastor en sartén de hierro sobre tabla de madera de Los Cavazos, con cebollita asada y chile" width="1600" height="1200" loading="lazy">
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-block" data-reveal>
+        <h3>Importado de Monterrey, N.L.</h3>
+        <p>El cabrito llega de Monterrey, Nuevo León, y se asa 100% en leña de mezquite y carbón, despacio y a fuego abierto, como se hace en el norte.</p>
+      </div>
+      <div class="about-block" data-reveal>
+        <h3>Servido chisporroteando</h3>
+        <p>Llega en sartén de hierro sobre cama de cebolla, con frijoles refritos coronados con guiso de puerco, un plato de lechuga, tomate y cebolla, y las tortillas que elijas.</p>
+      </div>
+      <dl class="cuts" data-reveal>
+        <div><dt>Machitos</dt><dd>P. de mercado</dd></div>
+        <div><dt>Pierna</dt><dd>P. de mercado</dd></div>
+        <div><dt>Paleta</dt><dd>P. de mercado</dd></div>
+        <div><dt>Riñonada</dt><dd>P. de mercado</dd></div>
+        <div><dt>Medio cabrito</dt><dd>P. de mercado</dd></div>
+        <div><dt>Cabrito entero</dt><dd>P. de mercado</dd></div>
+      </dl>
+      <p class="about-note" data-reveal>Sin reembolsos ni cambios en cabrito, machitos o cortes. Disponibilidad según temporada y proveedor.</p>
+      <a class="btn btn-accent" href="#m-cabrito" data-reveal>Ver todo el cabrito</a>
+    </div>
+  </div>
+</section>
+
+<!-- FRANJA: se desliza con el scroll -->
+<div class="band" aria-hidden="true">
+  <div class="band-line" data-band="-1"><span>Mariscos</span><span>Carnes</span><span>Cabritos</span><span>Mariscos</span><span>Carnes</span><span>Cabritos</span><span>Mariscos</span><span>Carnes</span><span>Cabritos</span></div>
+  <div class="band-line band-alt" data-band="1"><span>Mezquite</span><span>Monterrey</span><span>Dallas</span><span>Texas</span><span>Mezquite</span><span>Monterrey</span><span>Dallas</span><span>Texas</span><span>Mezquite</span></div>
+</div>
+
+<!-- MENÚ COMPLETO -->
+<section class="menu" id="menu" aria-labelledby="menu-h">
+  <div class="menu-head">
+    <h2 id="menu-h" class="section-title" data-reveal>La carta completa</h2>
+    <p class="menu-lede" data-reveal>Precios en dólares. Pregunta por los precios de mercado del día.</p>
+  </div>
+
+  <div class="menu-tabs" role="tablist" aria-label="Secciones de la carta" data-reveal>
+    <button role="tab" class="menu-tab" id="tab-m-mariscos" aria-controls="m-mariscos" aria-selected="true">Mariscos</button>
+    <button role="tab" class="menu-tab" id="tab-m-carnes" aria-controls="m-carnes" aria-selected="false">Carnes</button>
+    <button role="tab" class="menu-tab" id="tab-m-cabrito" aria-controls="m-cabrito" aria-selected="false">Cabrito</button>
+    <button role="tab" class="menu-tab" id="tab-m-bebidas" aria-controls="m-bebidas" aria-selected="false">Bebidas</button>
+    <button role="tab" class="menu-tab" id="tab-m-postres" aria-controls="m-postres" aria-selected="false">Postres</button>
+  </div>
+
+  <div class="chapter" id="m-mariscos" role="tabpanel" aria-labelledby="tab-m-mariscos">
+    <div class="chapter-head">
+      <h3 class="visually-hidden">Mariscos</h3>
+      <p class="chapter-script">estilo Mazatlán</p>
+      <p class="chapter-count">33 opciones</p>
+    </div>
+    <div class="chapter-strip">
+      <img src="assets/img/plato-14-sm.jpg" alt="Aguachile Tour de Mazatlán" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-15-sm.jpg" alt="Pasta Sinaloa" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-01-sm.jpg" alt="Torre de mariscos" width="800" height="600" loading="lazy">
+    </div>
+    <div class="chapter-cols">
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Botana</h4><span>7 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Botana Las Coras</b><span>$17</span></p><p class="item-desc">Camarón con cabeza en nuestra salsa especial de la casa.</p></li>
+          <li class="item"><p class="item-row"><b>Calamari empanizado</b><span>$13</span></p><p class="item-desc">Calamar frito.</p></li>
+          <li class="item"><p class="item-row"><b>Camarones botaneros</b><span>$12 · $18</span></p><p class="item-desc">Camarón pelado frío con pepino, cebolla morada curtida, limón y salsa Valentina. 6 o 12 piezas.</p></li>
+          <li class="item"><p class="item-row"><b>Botana de pulpo</b><span>$14</span></p><p class="item-desc">Pulpo en preparación especial con nuestra salsa de la casa.</p></li>
+          <li class="item"><p class="item-row"><b>Ostiones estilo Mazatlán</b><span>$16 · $24</span></p><p class="item-desc">6 ostiones y 2 balas, o 12 ostiones y 2 balas.</p></li>
+          <li class="item"><p class="item-row"><b>Ostiones naturales</b><span>$12 · $16.95</span></p><p class="item-desc">6 o 12 ostiones.</p></li>
+          <li class="item"><p class="item-row"><b>Jaiba</b><span>$19</span></p><p class="item-desc">Jaiba caliente en nuestra salsa agridulce secreta.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Cocktails</h4><span>3 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Cocktail campechano</b><span>$20</span></p><p class="item-desc">Camarón, pulpo, ostión, ceviche, tomate, cebolla, cilantro y chile serrano con nuestra salsa coctelera secreta.</p></li>
+          <li class="item"><p class="item-row"><b>Shrimp cocktail</b><span>$9.95 · $16</span></p><p class="item-desc">Camarón, tomate, cebolla, cilantro y chile serrano con salsa coctelera de la casa. Mediano o grande.</p></li>
+          <li class="item"><p class="item-row"><b>Octopus cocktail</b><span>$18</span></p><p class="item-desc">Pulpo, tomate, cebolla, cilantro y chile serrano con salsa coctelera de la casa.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Aguachiles</h4><span>6 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Aguachile Tour de Mazatlán</b><span>$23</span></p><p class="item-desc">Selecciona 3 capos de la lista.</p></li>
+          <li class="item"><p class="item-row"><b>Aguachile Chapo</b><span>$19</span></p></li>
+          <li class="item"><p class="item-row"><b>Aguachile Pantera Rosa</b><span>$19</span></p></li>
+          <li class="item"><p class="item-row"><b>Aguachile Amarillo Carrillo</b><span>$19</span></p></li>
+          <li class="item"><p class="item-row"><b>Aguachile Jesús Malverde</b><span>$19</span></p></li>
+          <li class="item"><p class="item-row"><b>Aguachile Negro Santilla</b><span>$19</span></p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Ceviches</h4><span>5 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Ceviche tropical</b><span>$19</span></p><p class="item-desc">Ceviche de pescado, pepino, pico de gallo, piña y aguacate.</p></li>
+          <li class="item"><p class="item-row"><b>Ceviche Cavazos</b><span>$22</span></p><p class="item-desc">Ceviche de pescado, de camarón y de pulpo, pepino, pico de gallo y aguacate.</p></li>
+          <li class="item"><p class="item-row"><b>Ceviche de pulpo</b><span>$18.95</span></p><p class="item-desc">Pulpo, pepino, pico de gallo y aguacate.</p></li>
+          <li class="item"><p class="item-row"><b>Ceviche de camarón</b><span>$18</span></p><p class="item-desc">Camarón, pepino, pico de gallo y aguacate.</p></li>
+          <li class="item"><p class="item-row"><b>Ceviche de pescado</b><span>$17.50</span></p><p class="item-desc">Pescado, pepino, pico de gallo y aguacate.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Platillos</h4><span>10 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Pulpo zarandeado</b><span>Consultar</span></p><p class="item-desc">Pulpo a la parrilla con arroz, aguacate, pan, papas fritas y ensalada.</p></li>
+          <li class="item"><p class="item-row"><b>Mojarra a la parrilla</b><span>$24</span></p><p class="item-desc">Con arroz, pan, papas fritas y ensalada.</p></li>
+          <li class="item"><p class="item-row"><b>Mojarra frita</b><span>$19</span></p></li>
+          <li class="item"><p class="item-row"><b>Camarones Miguelón</b><span>$21</span></p><p class="item-desc">Camarón a la parrilla en salsa secreta de la casa. Con arroz, pan, papas fritas y ensalada.</p></li>
+          <li class="item"><p class="item-row"><b>Camarones al mojo de ajo</b><span>$18</span></p><p class="item-desc">Con arroz, pan, papas fritas y ensalada.</p></li>
+          <li class="item"><p class="item-row"><b>Tacos gobernador</b><span>$14</span></p><p class="item-desc">Camarón, pico de gallo y queso.</p></li>
+          <li class="item"><p class="item-row"><b>Tacos de camarón</b><span>$12.50</span></p><p class="item-desc">3 tacos de camarón.</p></li>
+          <li class="item"><p class="item-row"><b>Tacos de pescado</b><span>$11.50</span></p><p class="item-desc">3 tacos de pescado.</p></li>
+          <li class="item"><p class="item-row"><b>Pasta Sinaloa</b><span>$18</span></p><p class="item-desc">Pasta en salsa cremosa con camarón y pulpo.</p></li>
+          <li class="item"><p class="item-row"><b>Camarones a la diabla</b><span>$18</span></p><p class="item-desc">Camarón picoso, servido con arroz.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Torre y caldo</h4><span>2 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Torre de mariscos</b><span>$29</span></p><p class="item-desc">Pulpo, camarón, jaiba, 2 camarones con cabeza, aguacate, cebolla y pepino en salsa negra de la casa.</p></li>
+          <li class="item"><p class="item-row"><b>Caldo pata salada</b><span>$23</span></p><p class="item-desc">Camarón, pescado, pata de jaiba, pulpo y arroz.</p></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="chapter" id="m-carnes" role="tabpanel" aria-labelledby="tab-m-carnes">
+    <div class="chapter-head">
+      <h3 class="visually-hidden">Carnes</h3>
+      <p class="chapter-script">al carbón y mezquite</p>
+      <p class="chapter-count">32 opciones</p>
+    </div>
+    <div class="chapter-strip">
+      <img src="assets/img/plato-02-sm.jpg" alt="Chicharrón de ribeye" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-20-sm.jpg" alt="Nachos de fajita de res o pollo" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-10-sm.jpg" alt="Parrillada para una persona" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-11-sm.jpg" alt="Molcajete para dos" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-04-sm.jpg" alt="Arrachera" width="800" height="600" loading="lazy">
+    </div>
+    <div class="chapter-cols">
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Para empezar</h4><span>9 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Chicharrón de ribeye</b><span>$13</span></p><p class="item-desc">Trozos de ribeye sazonados y fritos, con una bola de guacamole.</p></li>
+          <li class="item"><p class="item-row"><b>Nachos de fajita de res o pollo</b><span>$10 · $14</span></p><p class="item-desc">Totopos sobre frijoles refritos con pico de gallo, crema y guacamole. Media o completa.</p></li>
+          <li class="item"><p class="item-row"><b>Queso flameado</b><span>$11</span></p><p class="item-desc">Queso blanco flameado con chorizo asado y tres tortillas a elegir.</p></li>
+          <li class="item"><p class="item-row"><b>Guacamole</b><span>$10</span></p><p class="item-desc">Ingredientes frescos, preparado en tu mesa al momento.</p></li>
+          <li class="item"><p class="item-row"><b>Chiles con tocino</b><span>$11</span></p><p class="item-desc">Chiles rellenos de queso envueltos en tocino.</p></li>
+          <li class="item"><p class="item-row"><b>Alitas</b><span>$12 · $18</span></p><p class="item-desc">Alitas en salsa búfalo con papas fritas. 6 o 12 piezas.</p></li>
+          <li class="item"><p class="item-row"><b>Cueritos botaneros</b><span>$6 · $9</span></p><p class="item-desc">Chicharrón y cueritos en vinagre con nuestra salsa secreta de habanero. Chico o grande.</p></li>
+          <li class="item"><p class="item-row"><b>Queso dip</b><span>$5 · $7</span></p><p class="item-desc">Taza o tazón.</p></li>
+          <li class="item"><p class="item-row"><b>Chips y salsa adicional</b><span>$2.95</span></p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Parrilladas</h4><span>3 tamaños</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Parrillada para una persona</b><span>$21</span></p><p class="item-desc">Fajita de res y pollo, salchicha ahumada y camarón a la leña de mezquite y carbón, en sartén chisporroteando sobre cebolla. Con arroz y frijoles refritos o charros.</p></li>
+          <li class="item"><p class="item-row"><b>Parrillada para dos</b><span>$38</span></p></li>
+          <li class="item"><p class="item-row"><b>Parrillada para cuatro</b><span>$75</span></p></li>
+          <li class="item"><p class="item-row"><b>Agrega riñonada de cabrito</b><span>$40</span></p><p class="item-desc">Parrilladas solo de res: $3 adicionales por persona.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Molcajete y hamburguesa</h4><span>2 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Molcajete para dos</b><span>$38</span></p><p class="item-desc">Pollo, arrachera, camarón y salchicha.</p></li>
+          <li class="item"><p class="item-row"><b>Hamburguesa La Carretera</b><span>$15</span></p><p class="item-desc">Carne de res de 8 oz con queso blanco derretido, jamón, lechuga, tomate y aguacate, con papas fritas.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Steak</h4><span>9 cortes</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Ribeye 12 oz</b><span>$13</span></p></li>
+          <li class="item"><p class="item-row"><b>T-bone</b><span>$24</span></p></li>
+          <li class="item"><p class="item-row"><b>Arrachera</b><span>$24</span></p><p class="item-desc">Beef skirt steak.</p></li>
+          <li class="item"><p class="item-row"><b>Tomahawk</b><span>P. de mercado</span></p></li>
+          <li class="item"><p class="item-row"><b>Tablitas de res</b><span>$19</span></p></li>
+          <li class="item"><p class="item-row"><b>Aguachile de ribeye</b><span>$19</span></p><p class="item-desc">Tiras de ribeye en salsa picosa, pepino y cebolla.</p></li>
+          <li class="item"><p class="item-row"><b>Tuétano de res</b><span>$22</span></p></li>
+          <li class="item"><p class="item-row"><b>Sirloin en trozos</b><span>$20</span></p></li>
+          <li class="item"><p class="item-row"><b>Cabeza de cabrito</b><span>$19</span></p></li>
+        </ul>
+        <p class="cat-note">Todas las carnes llevan frijoles refritos, arroz, lechuga, pico de gallo y guacamole. Ribeye y T-bone con puré de papa con queso. Frijoles charros y verduras a petición.</p>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Fajitas</h4><span>5 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Fajitas de res y pollo</b><span>$18</span></p><p class="item-desc">Res y pollo al carbón.</p></li>
+          <li class="item"><p class="item-row"><b>Fajita de res</b><span>$19</span></p><p class="item-desc">Para una persona.</p></li>
+          <li class="item"><p class="item-row"><b>Fajita de pollo</b><span>$15</span></p><p class="item-desc">Para una persona.</p></li>
+          <li class="item"><p class="item-row"><b>Quesadilla</b><span>$12</span></p><p class="item-desc">Dos quesadillas con fajita de res o pollo.</p></li>
+          <li class="item"><p class="item-row"><b>Asado de puerco</b><span>$10</span></p><p class="item-desc">Puerco en salsa roja de guajillo y ancho, con arroz y frijoles.</p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Tacos gourmet</h4><span>3 platillos</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Tacos de ribeye</b><span>$14</span></p><p class="item-desc">Tres tacos de maíz o harina (harina $1.25 extra), con arroz, frijoles charros, lechuga, guacamole y pico.</p></li>
+          <li class="item"><p class="item-row"><b>Tacos de carne asada</b><span>$15</span></p></li>
+          <li class="item"><p class="item-row"><b>Tacos de pollo</b><span>$12</span></p></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="chapter" id="m-cabrito" role="tabpanel" aria-labelledby="tab-m-cabrito">
+    <div class="chapter-head">
+      <h3 class="visually-hidden">Cabrito al pastor</h3>
+      <p class="chapter-script">de Monterrey, N.L.</p>
+      <p class="chapter-count">6 opciones</p>
+    </div>
+    <div class="chapter-strip">
+      <img src="assets/img/plato-09-sm.jpg" alt="Machitos" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-07-sm.jpg" alt="Pierna" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-08-sm.jpg" alt="Paleta" width="800" height="600" loading="lazy">
+    </div>
+    <div class="chapter-cols">
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Cortes</h4><span>6 cortes</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Machitos</b><span>P. de mercado</span></p></li>
+          <li class="item"><p class="item-row"><b>Pierna</b><span>P. de mercado</span></p></li>
+          <li class="item"><p class="item-row"><b>Paleta</b><span>P. de mercado</span></p></li>
+          <li class="item"><p class="item-row"><b>Riñonada</b><span>P. de mercado</span></p></li>
+          <li class="item"><p class="item-row"><b>Medio cabrito</b><span>P. de mercado</span></p></li>
+          <li class="item"><p class="item-row"><b>Cabrito entero</b><span>P. de mercado</span></p></li>
+        </ul>
+        <p class="cat-note">Asado 100% en leña de mezquite. Sin reembolsos ni cambios en cabrito, machitos o cortes; disponibilidad según temporada y proveedor.</p>
+      </details>
+    </div>
+  </div>
+  <div class="chapter" id="m-bebidas" role="tabpanel" aria-labelledby="tab-m-bebidas">
+    <div class="chapter-head">
+      <h3 class="visually-hidden">Bebidas</h3>
+      <p class="chapter-script">y micheladas</p>
+      <p class="chapter-count">13 opciones</p>
+    </div>
+    <div class="chapter-strip">
+      <img src="assets/img/plato-19-sm.jpg" alt="Piña colada" width="800" height="600" loading="lazy">
+      <img src="assets/img/plato-03-sm.jpg" alt="Micherey" width="800" height="600" loading="lazy">
+    </div>
+    <div class="chapter-cols">
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Drinks</h4><span>10 bebidas</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Refresco de fuente</b><span>$3.50</span></p><p class="item-desc">Rellenos gratis.</p></li>
+          <li class="item"><p class="item-row"><b>Coca mexicana</b><span>$3.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Fanta mexicana</b><span>$3.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Aguas frescas</b><span>$3.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Café</b><span>$2.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Red Bull</b><span>$5</span></p></li>
+          <li class="item"><p class="item-row"><b>Frozen margaritas</b><span>$10</span></p></li>
+          <li class="item"><p class="item-row"><b>Vampiro</b><span>$12</span></p></li>
+          <li class="item"><p class="item-row"><b>Piña colada</b><span>$10</span></p></li>
+          <li class="item"><p class="item-row"><b>Paloma</b><span>$12</span></p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Micheladas</h4><span>3 bebidas</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Cerveza doméstica</b><span>$9.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Cerveza importada</b><span>$10.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Micherey</b><span>$15</span></p></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="chapter" id="m-postres" role="tabpanel" aria-labelledby="tab-m-postres">
+    <div class="chapter-head">
+      <h3 class="visually-hidden">Postres</h3>
+      <p class="chapter-script">y menú kids</p>
+      <p class="chapter-count">8 opciones</p>
+    </div>
+    <div class="chapter-strip">
+
+    </div>
+    <div class="chapter-cols">
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Postres</h4><span>4 postres</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Pan de elote</b><span>$7</span></p></li>
+          <li class="item"><p class="item-row"><b>Pan de elote loaded</b><span>$9.50</span></p></li>
+          <li class="item"><p class="item-row"><b>Churros con nieve</b><span>$8</span></p></li>
+          <li class="item"><p class="item-row"><b>Flan</b><span>$7</span></p></li>
+        </ul>
+      </details>
+      <details class="cat" open>
+        <summary class="cat-head"><h4>Kids</h4><span>Hasta 11 años</span></summary>
+        <ul class="items">
+          <li class="item"><p class="item-row"><b>Soft tacos</b><span>$7</span></p><p class="item-desc">Incluye refresco.</p></li>
+          <li class="item"><p class="item-row"><b>Burrito de frijol y queso</b><span>$7</span></p><p class="item-desc">Incluye refresco.</p></li>
+          <li class="item"><p class="item-row"><b>Quesadilla</b><span>$7</span></p><p class="item-desc">Incluye refresco.</p></li>
+          <li class="item"><p class="item-row"><b>Chicken fingers</b><span>$7</span></p><p class="item-desc">Incluye refresco.</p></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <div class="notice" data-reveal>
+    <p><b>Aviso:</b> antes de ordenar, informa a tu mesero sobre cualquier alergia alimentaria. Consumir carnes, aves, pescados, mariscos o huevos crudos o poco cocidos puede aumentar el riesgo de enfermedades transmitidas por alimentos. El pescado puede tener espinas pequeñas: come con precaución.</p>
+    <p><b>Grupos de 5 o más:</b> se agrega 15% de propina.</p>
+  </div>
+</section>
+
+<!-- PARRILLADA: un cuadro, tres distancias -->
+<section class="showcase" id="parrillada" aria-labelledby="parr-h">
+  <div class="showcase-stage">
+    <h2 id="parr-h" class="showcase-title">
+      <span class="showcase-top">Parrillada</span>
+      <span class="showcase-bottom">al mezquite</span>
+    </h2>
+    <div class="showcase-frame">
+      <img src="assets/img/plato-10.jpg" alt="Parrillada en sartén de hierro: fajita de res y pollo, salchicha, camarón, cebollitas y chile, sobre tabla de madera marcada Cabritos Los Cavazos" width="1600" height="1200" loading="lazy">
+    </div>
+    <p class="showcase-caption">Fajita de res y pollo, salchicha ahumada y camarón a la leña de mezquite y carbón. Una persona $21, dos $38, cuatro $75.</p>
+  </div>
+  <div class="showcase-markers" aria-hidden="true">
+    <span data-stage="0"></span><span data-stage="1"></span><span data-stage="2"></span>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="gallery" aria-labelledby="gal-h">
+  <h2 id="gal-h" class="gallery-title"><span>La mesa completa</span> <span class="gallery-count">20 platillos</span></h2>
+  <div class="gallery-row" tabindex="0" aria-label="Galería de platillos, desliza para ver más">
+    <img src="assets/img/plato-01-sm.jpg" alt="Torre de mariscos" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-02-sm.jpg" alt="Chicharrón de ribeye en sartén" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-03-sm.jpg" alt="Micherey escarchada" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-04-sm.jpg" alt="Arrachera en sartén sobre tabla" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-05-sm.jpg" alt="Tuétano de res" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-06-sm.jpg" alt="Tablitas de res" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-07-sm.jpg" alt="Pierna de cabrito" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-08-sm.jpg" alt="Paleta y riñonada de cabrito" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-09-sm.jpg" alt="Cabrito al pastor" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-10-sm.jpg" alt="Parrillada con camarón y salchicha" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-11-sm.jpg" alt="Molcajete para dos" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-12-sm.jpg" alt="Cabeza de cabrito" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-13-sm.jpg" alt="Tacos gourmet con arroz y frijoles" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-14-sm.jpg" alt="Aguachile con mango y naranja" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-15-sm.jpg" alt="Pasta Sinaloa con camarón" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-16-sm.jpg" alt="Pasta verde con camarón y pan" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-17-sm.jpg" alt="Aguachile de ribeye en molcajete" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-18-sm.jpg" alt="Plato con arroz, frijoles y salsas de la casa" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-19-sm.jpg" alt="Piña colada con coco" width="800" height="600" loading="lazy">
+    <img src="assets/img/plato-20-sm.jpg" alt="Nachos de fajita" width="800" height="600" loading="lazy">
+  </div>
+</section>
+
+<!-- VISÍTANOS -->
+<section class="visit" id="visitanos" aria-labelledby="visit-h">
+  <img class="visit-photo" src="assets/img/plato-04.jpg" alt="Arrachera en sartén de hierro sobre tabla de madera de Los Cavazos" width="1600" height="1200" loading="lazy">
+  <div class="visit-card" data-reveal>
+    <h2 id="visit-h">Te esperamos en Dallas</h2>
+    <address>10240 N Walton Walker Blvd<br>Dallas, TX 75220</address>
+    <dl class="visit-rows">
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/cabritos_cavazos" target="_blank" rel="noopener">@cabritos_cavazos</a></dd></div>
+      <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/CabritosLosCavazos" target="_blank" rel="noopener">CabritosLosCavazos</a></dd></div>
+      <div><dt>TikTok</dt><dd><a href="https://www.tiktok.com/@cabritos.cavazos" target="_blank" rel="noopener">@cabritos.cavazos</a></dd></div>
+      <div><dt>Grupos</dt><dd>5 o más: 15% de propina</dd></div>
+    </dl>
+    <a class="btn btn-accent btn-block" href="https://maps.app.goo.gl/NTE251S19HnPEeCE7" target="_blank" rel="noopener">Cómo llegar y horario</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-photo" data-parallax="0.1"><img src="assets/img/plato-08.jpg" alt="Cabrito asado en leña de mezquite, de cerca" width="1600" height="1200" loading="lazy"></div>
+  <div class="foot-side">
+    <img class="foot-logo" src="assets/img/logo-blanco.png" alt="Los Cavazos · Mariscos, Carnes, Cabritos" width="1200" height="288" loading="lazy">
+    <h2 class="visually-hidden">Explora</h2>
+    <nav class="foot-menu" aria-label="Pie de página">
+      <a href="#menu">La carta</a>
+      <a href="#m-mariscos">Mariscos</a>
+      <a href="#m-carnes">Carnes</a>
+      <a href="#cabrito">Cabrito</a>
+      <a href="#visitanos">Dallas</a>
+    </nav>
+    <div class="foot-blocks">
+      <p>10240 N Walton Walker Blvd<br>Dallas, TX 75220<br><a href="https://maps.app.goo.gl/NTE251S19HnPEeCE7" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+      <p><a href="https://www.instagram.com/cabritos_cavazos" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.facebook.com/CabritosLosCavazos" target="_blank" rel="noopener">Facebook</a><br><a href="https://www.tiktok.com/@cabritos.cavazos" target="_blank" rel="noopener">TikTok</a></p>
+    </div>
+    <p class="foot-legal">© 2026 Cabritos Los Cavazos · Mariscos, carnes y cabritos · Dallas, Texas</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
