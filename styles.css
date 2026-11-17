@@ -108,6 +108,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .bar-links a { text-decoration: none; font-weight: 500; transition: color .18s; }
 .bar-links a:hover { color: var(--accent); }
 .bar-cta { min-height: 44px; }
+.lang { display: flex; align-items: center; gap: 4px; }
+.lang-link {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px;
+  font-weight: 700; font-size: var(--s-sm); text-decoration: none; color: var(--ink-soft);
+  transition: color .18s, background-color .18s;
+}
+.lang-link:hover { color: var(--ink); background: var(--step); }
+.lang-link[aria-current="page"] { color: var(--black); background: var(--ink); }
 
 /* ---------- Inicio: video ---------- */
 .intro { position: relative; height: calc(100svh - var(--bar)); min-height: 560px; overflow: hidden; background: var(--black); }
@@ -393,7 +401,11 @@ html:not(.has-motion) .gallery-wall { overflow-x: auto; scrollbar-width: none; }
   .bar { gap: 16px; }
   .bar-links { display: none; }
   .bar-logo img { height: 30px; }
-  .bar-cta { margin-left: auto; min-height: 40px; padding: 0 16px; }
+  .bar { gap: 10px; }
+  .bar-logo img { height: 26px; }
+  .lang { margin-left: auto; gap: 2px; }
+  .lang-link { min-width: 36px; min-height: 40px; font-size: var(--s-xs); }
+  .bar-cta { min-height: 40px; padding: 0 12px; white-space: nowrap; font-size: var(--s-xs); }
   .picker { padding-top: 56px; gap: 0 24px; }
   .intro-actions .link { display: none; }
   .intro-toggle { top: 16px; bottom: auto; }
@@ -404,7 +416,7 @@ html:not(.has-motion) .gallery-wall { overflow-x: auto; scrollbar-width: none; }
   .about-stamp { margin: 16px 24px 0; }
   .about-right { padding: 32px 24px 0; }
   .about-photo { margin: 40px 24px -18%; }
-  .menu-tabs { gap: 6px 22px; }
+  .menu-tabs { gap: 22px 22px; }
   .chapter-strip { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 46vw; overflow-x: auto; scrollbar-width: none; margin: 24px calc(var(--m) * -1) 0; padding: 0 var(--m); }
   .chapter-strip::-webkit-scrollbar { display: none; }
   .chapter-cols { columns: 1; margin-top: 32px; }

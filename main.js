@@ -11,7 +11,8 @@
     let userPaused = false;
     const play = () => { const r = video.play(); if (r && r.catch) r.catch(() => {}); };
     const label = () => {
-      toggle.textContent = video.paused ? 'Reproducir video' : 'Pausar video';
+      const es = document.documentElement.lang.startsWith('es');
+      toggle.textContent = video.paused ? (es ? 'Reproducir video' : 'Play video') : (es ? 'Pausar video' : 'Pause video');
       toggle.setAttribute('aria-pressed', String(video.paused));
     };
     toggle.addEventListener('click', () => {
@@ -215,4 +216,9 @@
     window.addEventListener('resize', onScroll);
     frame();
   }
+  /* ---------- Idioma: al cambiar se conserva la sección ---------- */
+  document.querySelectorAll('.lang-link').forEach((a) => a.addEventListener('click', (e) => {
+    if (a.getAttribute('aria-current') === 'page') { e.preventDefault(); return; }
+    if (location.hash) a.setAttribute('href', a.getAttribute('href') + location.hash);
+  }));
 })();
