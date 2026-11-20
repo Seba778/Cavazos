@@ -429,8 +429,10 @@ html:not(.has-motion) .gallery-wall { overflow-x: auto; scrollbar-width: none; }
   .cat .items, .cat .cat-note { padding: 0 18px; }
   .cat .items { padding-bottom: 18px; }
   .cat .cat-note { padding-bottom: 18px; margin-top: 0; }
-  .showcase-frame { width: 66vw; }
-  .showcase-caption { padding: 0 var(--m); }
+  .showcase-frame { width: 54vw; }
+  .showcase-caption { padding: 0 var(--m); margin-top: 14px; }
+  /* en celular el texto aparece antes, para que dé tiempo de leerlo */
+  .js .showcase[data-stage="1"] .showcase-caption { opacity: 1; }
   .gallery-title { margin-bottom: 24px; }
   .gallery-row img { height: 34vw; }
   .gallery-wall, .gallery-row { gap: 8px; }
